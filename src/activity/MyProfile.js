@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/AntDesign';
 
-class HomeScreen extends React.Component {
+class MyProfile extends React.Component {
     static navigationOptions ={
         tabBarIcon:({tintColor})=>(
-            <Icon name="home" size={24} color={tintColor}></Icon>
+            <Icon name="profile" size={24} color={tintColor}></Icon>
         ),
     }
   render() {
@@ -17,4 +17,4 @@ class HomeScreen extends React.Component {
   }
 }
 
-export default HomeScreen
+export default MyProfile

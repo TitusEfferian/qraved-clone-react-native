@@ -2,19 +2,19 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-class HomeScreen extends React.Component {
+class History extends React.Component {
     static navigationOptions ={
         tabBarIcon:({tintColor})=>(
-            <Icon name="home" size={24} color={tintColor}></Icon>
+            <Icon name="history" size={24} color={tintColor}></Icon>
         ),
     }
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
+        <Text>History!</Text>
       </View>
     );
   }
 }
 
-export default HomeScreen
+export default History

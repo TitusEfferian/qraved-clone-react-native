@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-class HomeScreen extends React.Component {
+class Search extends React.Component {
     static navigationOptions ={
         tabBarIcon:({tintColor})=>(
-            <Icon name="home" size={24} color={tintColor}></Icon>
+            <Icon name="plus-square-o" size={24} color={tintColor}></Icon>
         ),
     }
   render() {
@@ -17,4 +17,4 @@ class HomeScreen extends React.Component {
   }
 }
 
-export default HomeScreen
+export default Search

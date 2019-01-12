@@ -1,0 +1,1 @@
+export const RED_COLOR = '#D20000'
