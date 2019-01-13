@@ -12,6 +12,7 @@ import RootStack from './src/RootStack/RootStack';
 import BottomNavigation from './src/BottomNavigation/BottomNavigation';
 import configureStore from './src/redux/configureStore';
 import { Provider } from 'react-redux'
+import TabNavigation from './src/activity/Home/TabNavigation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -27,7 +28,7 @@ export default class App extends Component<Props> {
     return (
       <Provider store={store}>
         <SafeAreaView style={{ flex: 1 }}>
-          <BottomNavigation />
+          <BottomNavigation/>
         </SafeAreaView>
       </Provider>
     );
