@@ -10,11 +10,12 @@ const TabNavigator = createMaterialTopTabNavigator({
     Journal: Journal,
     Guide: Journal,
     Video: Journal,
+
 },
     {
         tabBarOptions: {
-            style: {
-                backgroundColor: 'white',
+            style:{
+                backgroundColor:'white',
             },
             labelStyle: {
                 fontWeight: 'bold',
@@ -25,8 +26,12 @@ const TabNavigator = createMaterialTopTabNavigator({
                 backgroundColor: RED_COLOR
             },
             scrollEnabled: true,
+            tabStyle:{
+                width:100
+            }
+    
         },
-        animationEnabled: false,
+        animationEnabled:false,
         lazy: false,
         
     })
