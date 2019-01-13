@@ -24,7 +24,7 @@ function success(state, action) {
 
 function failed(state, action) {
     return {
-        data: action.errData,
+        data: action.error,
         isFetching: false,
         error: true
     }
