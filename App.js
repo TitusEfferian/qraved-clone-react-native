@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import RootStack from './src/RootStack/RootStack';
 import BottomNavigation from './src/BottomNavigation/BottomNavigation';
 import configureStore from './src/redux/configureStore';
@@ -26,7 +26,9 @@ export default class App extends Component<Props> {
   render() {
     return (
       <Provider store={store}>
-        <BottomNavigation />
+        <SafeAreaView style={{ flex: 1 }}>
+          <BottomNavigation />
+        </SafeAreaView>
       </Provider>
     );
   }
