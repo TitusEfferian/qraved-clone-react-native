@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects'
 import { fetchHomePagesApi } from '../apis/fetchHomePage';
-import { REQUEST_DATA_HOME_SUCCESS, REQUEST_DATA_HOME_FAILED } from '../redux/actions/actions';
+import { REQUEST_DATA_HOME_SUCCESS, REQUEST_DATA_HOME_FAILED } from '../redux/actions/fetchHomePage';
 
 export function* fetchHomePage(action) {
     try {

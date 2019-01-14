@@ -3,11 +3,10 @@ import { Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ForkIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux'
-import { requestDataHome } from '../../redux/actions/actions';
+import { requestDataHome } from '../../redux/actions/fetchHomePage';
 import Header from '../../components/Header';
 import { GRAY_COLOR, FONT_BOLD, RED_COLOR } from '../../styles';
 import Button from '../../components/Button';
-import TabNavigation from './TabNavigation';
 
 class HomeScreen extends React.Component {
   componentDidMount() {

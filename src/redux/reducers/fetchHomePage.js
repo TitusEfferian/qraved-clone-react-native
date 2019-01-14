@@ -1,4 +1,4 @@
-import { REQUEST_DATA_HOME, REQUEST_DATA_HOME_SUCCESS, REQUEST_DATA_HOME_FAILED } from '../actions/actions'
+import { REQUEST_DATA_HOME, REQUEST_DATA_HOME_SUCCESS, REQUEST_DATA_HOME_FAILED } from '../actions/fetchHomePage'
 
 const INITIAL_STATE = {
     data: undefined,
