@@ -12,11 +12,16 @@ class Widget extends React.PureComponent {
     _renderItem = ({ item, index }) => (
         <ImageBackground
             source={{ uri: 'https://www.qraved.com/jakarta/' + item.image }}
-            style={{ width: 100, height: 100, marginRight: index == this.props.data.length - 1 ? 0 : 16, backgroundColor: this.state.onLoad ? GRAY_COLOR : null }}
+            style={{ width: 155, height: 143, marginRight: index == this.props.data.length - 1 ? 0 : 8, borderRadius: 8, overflow: 'hidden', backgroundColor: this.state.onLoad ? GRAY_COLOR : null }}
+            imageStyle={{
+                backgroundColor: GRAY_COLOR
+            }}
             onLoad={() => { this.setState({ onLoad: false }) }}
         >
+            <View style={{ flex: 1, backgroundColor: 'black', opacity: 0.2 }}>
+            </View>
+            <Text style={{ position: 'absolute', bottom: 10, left: 10, ...FONT_BOLD, color: 'white' }}>{item.title}</Text>
         </ImageBackground>
-
     );
 
     render() {
@@ -31,15 +36,16 @@ class Widget extends React.PureComponent {
                     data={this.props.isLoading ? undefined : this.props.data}
                     renderItem={this._renderItem}
                     horizontal={true}
+                    showsHorizontalScrollIndicator={false}
                     ListEmptyComponent={() => (
                         <View style={{ flex: 1, flexDirection: 'row' }}>
-                            <View style={{ width: 100, height: 100, backgroundColor: GRAY_COLOR, marginRight: 16 }}>
+                            <View style={{ width: 155, height: 143, borderRadius: 8, backgroundColor: GRAY_COLOR, marginRight: 8 }}>
                             </View>
-                            <View style={{ width: 100, height: 100, backgroundColor: GRAY_COLOR, marginRight: 16 }}>
+                            <View style={{ width: 155, height: 143, borderRadius: 8, backgroundColor: GRAY_COLOR, marginRight: 8 }}>
                             </View>
-                            <View style={{ width: 100, height: 100, backgroundColor: GRAY_COLOR, marginRight: 16 }}>
+                            <View style={{ width: 155, height: 143, borderRadius: 8, backgroundColor: GRAY_COLOR, marginRight: 8 }}>
                             </View>
-                            <View style={{ width: 100, height: 100, backgroundColor: GRAY_COLOR, marginRight: 16 }}>
+                            <View style={{ width: 155, height: 143, borderRadius: 8, backgroundColor: GRAY_COLOR, marginRight: 8 }}>
                             </View>
                         </View>
                     )

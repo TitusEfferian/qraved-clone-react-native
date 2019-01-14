@@ -32,6 +32,7 @@ const TabNavigator = createMaterialTopTabNavigator({
         },
         animationEnabled: false,
         lazy: false,
+        swipeEnabled:false
 
     })
 
