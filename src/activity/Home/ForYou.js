@@ -25,6 +25,14 @@ class ForYou extends React.Component {
                     <Widget leftLabel='For You' rightLabel='show all' isLoading={true}></Widget>
                         
                 }
+                {
+                    this.props.home.data!=undefined
+                    ?
+                    <Widget leftLabel='Occasion' rightLabel='show all' data={this.props.home.data.homeSections[3].data}></Widget>
+                    :
+                    <Widget leftLabel='Occasion' rightLabel='show all' isLoading={true}></Widget>
+                        
+                }
             </View>
         )
     }
