@@ -10,11 +10,6 @@ import Button from '../../components/Button';
 import TabNavigation from './TabNavigation';
 
 class HomeScreen extends React.Component {
-  static navigationOptions = {
-    tabBarIcon: ({ tintColor }) => (
-      <Icon name="home" size={24} color={tintColor}></Icon>
-    ),
-  }
   componentDidMount() {
     this.props.requestFetchHome()
   }
@@ -30,7 +25,6 @@ class HomeScreen extends React.Component {
           </Button>
           <Icon name="search" size={24}></Icon>
         </Header>
-        <TabNavigation></TabNavigation>
       </View>
     );
   }
