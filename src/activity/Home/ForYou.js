@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, ScrollView } from 'react-native'
 import { requsetCities } from '../../redux/actions/cities';
 import { connect } from 'react-redux'
 import Widget from '../../components/Widget';
@@ -16,7 +16,7 @@ class ForYou extends React.Component {
     render() {
         console.log(this.props.home.data)
         return (
-            <View style={{ flex: 1, backgroundColor: GRAY_COLOR }}>
+            <ScrollView style={{ flex: 1, backgroundColor: GRAY_COLOR }}>
                 {
                     this.props.home.data!=undefined
                     ?
@@ -30,10 +30,23 @@ class ForYou extends React.Component {
                     ?
                     <Widget leftLabel='Occasion' rightLabel='show all' data={this.props.home.data.homeSections[3].data}></Widget>
                     :
-                    <Widget leftLabel='Occasion' rightLabel='show all' isLoading={true}></Widget>
-                        
+                    <Widget leftLabel='Occasion' rightLabel='show all' isLoading={true}></Widget>  
                 }
-            </View>
+                {
+                    this.props.home.data!=undefined
+                    ?
+                    <Widget leftLabel='Latest news' rightLabel='show all' data={this.props.home.data.homeSections[1].data} isNews={true}></Widget>
+                    :
+                    <Widget leftLabel='Latest news' rightLabel='show all' isLoading={true}></Widget>  
+                }
+                {
+                    this.props.home.data!=undefined
+                    ?
+                    <Widget leftLabel='Trending Article' rightLabel='show all' data={this.props.home.data.homeSections[4].data} isNews={true}></Widget>
+                    :
+                    <Widget leftLabel='Trending Article' rightLabel='show all' isLoading={true}></Widget>  
+                }
+            </ScrollView>
         )
     }
 }
