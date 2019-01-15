@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, ImageBackground } from 'react-native';
-import { FONT_BOLD, FONT_SIZE_LARGE, FONT_SIZE_NORMAL, GRAY_COLOR } from '../styles';
+import { FONT_BOLD, FONT_SIZE_LARGE, FONT_SIZE_NORMAL, GRAY_COLOR, RED_COLOR } from '../styles';
+import StarRating from 'react-native-star-rating'
 import PropTypes from 'prop-types'
 class Widget extends React.PureComponent {
     constructor(props) {
@@ -25,21 +26,56 @@ class Widget extends React.PureComponent {
     );
 
     _renderItemRestorant = ({ item, index }) => (
-        
-        <ImageBackground
-            source={{ uri: 'https://www.qraved.com/jakarta/' + item.image }}
-            style={{ width: 236, height: 132, marginRight: index == this.props.data.length - 1 ? 0 : 8, borderRadius: 8, overflow: 'hidden', backgroundColor: this.state.onLoad ? GRAY_COLOR : null }}
-            imageStyle={{
-                backgroundColor: GRAY_COLOR
-            }}
-            onLoad={() => { this.setState({ onLoad: false }) }}
-        >
-            <View style={{ width: 236, height: 132, backgroundColor: 'black', opacity: 0.2 }}>
-            </View>
-            <Text style={{ position: 'absolute', bottom: 24, left: 10, ...FONT_BOLD, color: 'white' }}>{item.title}</Text>
-            <Text style={{ position: 'absolute', bottom: 8, left: 10, color: 'white' }}>{item.districtName}</Text>
+        <View>
+            <ImageBackground
+                source={{ uri: 'https://www.qraved.com/jakarta/' + item.image }}
+                style={{ width: 236, height: 132, marginRight: index == this.props.data.length - 1 ? 0 : 8, borderRadius: 8, overflow: 'hidden', backgroundColor: this.state.onLoad ? GRAY_COLOR : null, marginBottom: 8 }}
+                imageStyle={{
+                    backgroundColor: GRAY_COLOR
+                }}
+                onLoad={() => { this.setState({ onLoad: false }) }}
+            >
+                <View style={{ width: 236, height: 132, backgroundColor: 'black', opacity: 0.2 }}>
+                </View>
+                <Text style={{ position: 'absolute', bottom: 24, left: 10, ...FONT_BOLD, color: 'white' }}>{item.title}</Text>
+                <Text style={{ position: 'absolute', bottom: 8, left: 10, color: 'white' }}>{item.districtName}</Text>
+            </ImageBackground>
+            {
+                item.reviewCount == 0
+                    ?
+                    <Text>no rating yet</Text>
+                    :
+                    <View style={{ flexDirection: 'row' }}>
+                        <Text style={{
+                            marginRight: 8,
+                            color: RED_COLOR,
+                            ...FONT_BOLD
+                        }}>
+                            {
+                                item.rating / 2
+                            }
+                        </Text>
+                        <StarRating
+                            disabled={true}
+                            maxStars={5}
+                            rating={item.rating / 2}
+                            fullStarColor={RED_COLOR}
+                            containerStyle={
+                                {
+                                    width: 24
+                                }
+                            }
+                            starSize={16}
+                        />
+                        <Text style={{ marginLeft: 56 }}>
+                            {
+                                item.reviewCount + ' Reviews'
+                            }
+                        </Text>
+                    </View>
 
-        </ImageBackground>
+            }
+        </View>
     );
 
     _renderItemNews = ({ item, index }) => (
