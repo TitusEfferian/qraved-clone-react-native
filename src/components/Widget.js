@@ -45,7 +45,7 @@ class Widget extends React.PureComponent {
                     ?
                     <Text>no rating yet</Text>
                     :
-                    <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'row',alignItems:'center' }}>
                         <Text style={{
                             marginRight: 8,
                             color: RED_COLOR,
