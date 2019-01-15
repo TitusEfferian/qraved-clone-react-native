@@ -60,4 +60,4 @@ const BottomNavigation = createBottomTabNavigator(
     }
 )
 
-export default BottomNavigation
+export default createAppContainer(BottomNavigation)

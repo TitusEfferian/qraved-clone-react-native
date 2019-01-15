@@ -28,7 +28,7 @@ export default class App extends Component<Props> {
     return (
       <Provider store={store}>
         <SafeAreaView style={{ flex: 1 }}>
-          <RootStack/>
+          <BottomNavigation/>
         </SafeAreaView>
       </Provider>
     );
