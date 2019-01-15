@@ -13,6 +13,22 @@ import ForkIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Button from '../components/Button';
 import { Text, View } from 'react-native'
 
+const HeaderHome = () => {
+    return (
+        <View style={{ flex: 1 }}>
+            <Header>
+                <ForkIcon name="silverware-fork-knife" size={24} color={RED_COLOR}></ForkIcon>
+                <Button style={{ backgroundColor: GRAY_COLOR, justifyContent: 'space-between' }}>
+                    <Text style={FONT_BOLD}>Jakarta</Text>
+                    <Icon name="keyboard-arrow-down" style={{ marginLeft: 16 }} size={24}></Icon>
+                </Button>
+                <Icon name="search" size={24}></Icon>
+            </Header>
+        </View>
+    )
+}
+
+
 const BottomNavigation = createBottomTabNavigator(
     {
         Home: {
@@ -20,20 +36,7 @@ const BottomNavigation = createBottomTabNavigator(
                 Home: {
                     screen: TabNavigator,
                     navigationOptions: {
-                        headerTitle: () => {
-                            return (
-                                <View style={{ flex: 1 }}>
-                                    <Header>
-                                        <ForkIcon name="silverware-fork-knife" size={24} color={RED_COLOR}></ForkIcon>
-                                        <Button style={{ backgroundColor: GRAY_COLOR, justifyContent: 'space-between' }}>
-                                            <Text style={FONT_BOLD}>Jakarta</Text>
-                                            <Icon name="keyboard-arrow-down" style={{ marginLeft: 16 }} size={24}></Icon>
-                                        </Button>
-                                        <Icon name="search" size={24}></Icon>
-                                    </Header>
-                                </View>
-                            )
-                        },
+                        headerTitle: () => <HeaderHome/>
                     }
                 }
             }),
