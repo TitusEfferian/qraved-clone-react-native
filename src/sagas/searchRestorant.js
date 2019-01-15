@@ -4,7 +4,6 @@ import { fetchSearchRestorant } from '../apis/searchRestorant';
 
 export function* searchRestorant(action) {
     try {
-        console.log(action)
         const data = yield call(fetchSearchRestorant,action.query)
         yield put({ type: REQUEST_SEARCH_RESTORANT_SUCCESS, data })
     } catch (error) {

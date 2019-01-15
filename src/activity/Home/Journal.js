@@ -7,7 +7,6 @@ class Journal extends React.PureComponent {
         this.props.reqSearchRestorant('sushi')
     }
     render() {
-        console.log(this.props.restorant,'INI RESTORANT')
         return (
             <View style={{ flex: 1 }}>
                 <Text>Journal</Text>
