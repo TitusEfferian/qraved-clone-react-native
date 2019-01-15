@@ -14,7 +14,6 @@ class ForYou extends React.Component {
         this.props.fetchHome()
     }
     render() {
-        console.log(this.props.home.data)
         return (
             <ScrollView style={{ flex: 1, backgroundColor: GRAY_COLOR }}>
                 {
