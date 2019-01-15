@@ -25,6 +25,7 @@ class Widget extends React.PureComponent {
     );
 
     _renderItemRestorant = ({ item, index }) => (
+        
         <ImageBackground
             source={{ uri: 'https://www.qraved.com/jakarta/' + item.image }}
             style={{ width: 236, height: 132, marginRight: index == this.props.data.length - 1 ? 0 : 8, borderRadius: 8, overflow: 'hidden', backgroundColor: this.state.onLoad ? GRAY_COLOR : null }}
@@ -35,7 +36,9 @@ class Widget extends React.PureComponent {
         >
             <View style={{ width: 236, height: 132, backgroundColor: 'black', opacity: 0.2 }}>
             </View>
-            <Text style={{ position: 'absolute', bottom: 10, left: 10, ...FONT_BOLD, color: 'white' }}>{item.title}</Text>
+            <Text style={{ position: 'absolute', bottom: 24, left: 10, ...FONT_BOLD, color: 'white' }}>{item.title}</Text>
+            <Text style={{ position: 'absolute', bottom: 8, left: 10, color: 'white' }}>{item.districtName}</Text>
+
         </ImageBackground>
     );
 
