@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { requestSearchRestorant } from '../../redux/actions/searchRestorant';
 class Journal extends React.PureComponent {
     componentDidMount() {
-        this.props.reqSearchRestorant()
+        this.props.reqSearchRestorant('sushi')
     }
     render() {
         console.log(this.props.restorant,'INI RESTORANT')
@@ -22,7 +22,7 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-        reqSearchRestorant: () => dispatch(requestSearchRestorant())
+        reqSearchRestorant: (query) => dispatch(requestSearchRestorant(query))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Journal)

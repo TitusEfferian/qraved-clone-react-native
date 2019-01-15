@@ -2,8 +2,9 @@ export const REQUEST_SEARCH_RESTORANT = 'REQUEST_SEARCH_RESTORANT'
 export const REQUEST_SEARCH_RESTORANT_SUCCESS = 'REQUEST_SEARCH_RESTORANT_SUCCESS'
 export const REQUEST_SEARCH_RESTORANT_FAILED = 'REQUEST_SEARCH_RESTORANT_FAILED'
 
-export function requestSearchRestorant(){
+export function requestSearchRestorant(query){
     return{
-        type:REQUEST_SEARCH_RESTORANT
+        type:REQUEST_SEARCH_RESTORANT,
+        query
     }
 }
