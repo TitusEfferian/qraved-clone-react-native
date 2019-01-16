@@ -17,7 +17,7 @@ import SearchActivity from '../activity/Home/Search';
 const HeaderHome = (props) => {
 
     return (
-        <View style={{ flex: 1,backgroundColor:'white' }}>
+        <View style={{ backgroundColor:'white' }}>
             <Header>
                 <ForkIcon name="silverware-fork-knife" size={24} color={RED_COLOR}></ForkIcon>
                 <Button style={{ backgroundColor: GRAY_COLOR, justifyContent: 'space-between' }}>
