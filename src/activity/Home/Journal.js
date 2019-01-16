@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { requestSearchRestorant } from '../../redux/actions/searchRestorant';
 class Journal extends React.PureComponent {
     componentDidMount() {
-        this.props.reqSearchRestorant('sushi')
+
     }
     render() {
         return (
