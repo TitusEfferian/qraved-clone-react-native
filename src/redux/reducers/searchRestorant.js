@@ -1,4 +1,4 @@
-import { REQUEST_SEARCH_RESTORANT, REQUEST_SEARCH_RESTORANT_SUCCESS, REQUEST_SEARCH_RESTORANT_FAILED } from "../actions/searchRestorant";
+import { REQUEST_SEARCH_RESTORANT, REQUEST_SEARCH_RESTORANT_SUCCESS, REQUEST_SEARCH_RESTORANT_FAILED, RESET_REDUX_STATE } from "../actions/searchRestorant";
 
 
 const INITIAL_STATE = {
@@ -7,6 +7,11 @@ const INITIAL_STATE = {
     error: false
 }
 
+function resetReduxState(){
+    return{
+        ...INITIAL_STATE
+    }
+}
 function request(state, action) {
     return {
         data: undefined,
@@ -39,6 +44,8 @@ export function reducer(state = INITIAL_STATE, action) {
             return success(state, action)
         case REQUEST_SEARCH_RESTORANT_FAILED:
             return failed(state, action)
+        case RESET_REDUX_STATE:
+            return resetReduxState()
         default:
             return state
     }

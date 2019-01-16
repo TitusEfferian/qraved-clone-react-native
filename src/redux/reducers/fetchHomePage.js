@@ -6,6 +6,7 @@ const INITIAL_STATE = {
     error: false
 }
 
+
 function request(state, action) {
     return {
         data: undefined,

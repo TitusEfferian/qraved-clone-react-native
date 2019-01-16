@@ -4,7 +4,7 @@ import { GRAY_COLOR, FONT_BOLD, FONT_SIZE_LARGE, RED_COLOR } from '../../styles'
 import Sections from '../../components/Sections';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { connect } from 'react-redux'
-import { requestSearchRestorant } from '../../redux/actions/searchRestorant';
+import { requestSearchRestorant, resetReduxState } from '../../redux/actions/searchRestorant';
 
 class SearchActivity extends React.PureComponent {
   static navigationOptions = {
@@ -16,6 +16,10 @@ class SearchActivity extends React.PureComponent {
     this.state = {
       query: ''
     }
+  }
+
+  componentWillUnmount(){
+    this.props.resetReduxState()
   }
 
   doSearch(query) {
@@ -85,7 +89,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    reqSearch: (query) => dispatch(requestSearchRestorant(query))
+    reqSearch: (query) => dispatch(requestSearchRestorant(query)),
+    resetReduxState:()=>dispatch(resetReduxState())
   }
 }
 

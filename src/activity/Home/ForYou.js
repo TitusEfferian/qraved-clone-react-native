@@ -60,7 +60,7 @@ class ForYou extends React.Component {
 function mapStateToProps(state) {
     return {
         cities: state.cities,
-        home: state.fetchHomePage
+        home: state.fetchHomePage,
     }
 }
 
