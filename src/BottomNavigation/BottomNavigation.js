@@ -18,7 +18,6 @@ import { Text, View, TouchableOpacity } from 'react-native'
 import SearchActivity from '../activity/Home/Search';
 
 const HeaderHome = (props) => {
-
   return (
     <View style={{ backgroundColor: 'white' }}>
       <Header>
@@ -35,7 +34,6 @@ const HeaderHome = (props) => {
   )
 }
 
-
 const BottomNavigation = createBottomTabNavigator(
   {
     Home: {
@@ -48,15 +46,15 @@ const BottomNavigation = createBottomTabNavigator(
       }
     },
     Favourite: {
-      screen:Favourite,
-      navigationOptions:{
-        tabBarIcon:({tintColor})=>(
+      screen: Favourite,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
           <IconIonicons name="ios-heart" size={24} color={tintColor}></IconIonicons>
-      ),
+        ),
       }
     },
     Search: {
-      screen:Search,
+      screen: Search,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <IconFontawesome name="plus-square-o" size={24} color={tintColor}></IconFontawesome>
@@ -64,19 +62,19 @@ const BottomNavigation = createBottomTabNavigator(
       }
     },
     History: {
-      screen:History,
-      navigationOptions:{
-        tabBarIcon:({tintColor})=>(
+      screen: History,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
           <Icon name="history" size={24} color={tintColor}></Icon>
-      ),
+        ),
       }
     },
     MyProfile: {
-      screen:MyProfile,
-      navigationOptions:{
-        tabBarIcon:({tintColor})=>(
+      screen: MyProfile,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
           <IconAntDesign name="profile" size={24} color={tintColor}></IconAntDesign>
-      ),
+        ),
       }
     }
   },
