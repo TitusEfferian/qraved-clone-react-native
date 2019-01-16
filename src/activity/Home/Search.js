@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, Text, TextInput } from 'react-native'
-import { GRAY_COLOR } from '../../styles';
+import { View, Text, TextInput,ActivityIndicator } from 'react-native'
+import { GRAY_COLOR, FONT_BOLD, FONT_SIZE_LARGE, RED_COLOR } from '../../styles';
 import Sections from '../../components/Sections';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { connect } from 'react-redux'
@@ -30,7 +30,7 @@ class SearchActivity extends React.PureComponent {
     console.log(this.props.restorant)
     return (
       <View style={{ flex: 1, backgroundColor: GRAY_COLOR }}>
-        <Sections style={{ marginBottom: 8, flexDirection: 'row', alignItems: 'center', padding: 8 }}>
+        <Sections style={{ flexDirection: 'row', alignItems: 'center', padding: 8 }}>
           <View style={{ width: '80%', backgroundColor: GRAY_COLOR, padding: 8, borderRadius: 4, flexDirection: 'row', alignItems: 'center' }}>
             <Icon size={24} name="search"></Icon>
             <TextInput
@@ -51,6 +51,26 @@ class SearchActivity extends React.PureComponent {
             </TextInput>
           </View>
           <Text style={{ width: '20%', textAlign: 'center' }} onPress={() => { this.props.navigation.pop() }}>cancel</Text>
+        </Sections>
+        <Sections style={{flex:1,padding:8}}>
+          {
+            this.props.restorant.data == undefined
+            ?
+              this.props.restorant.isFetching
+              ?
+                <View style={{ flex: 1,justifyContent:'center',alignItems:'center'}}>
+                  <ActivityIndicator size='large' color={RED_COLOR}/>
+                </View>
+                :
+                null
+            :
+            <Text style={{
+              ...FONT_BOLD,
+              ...FONT_SIZE_LARGE
+            }}>
+              Restaurant
+            </Text>
+          }
         </Sections>
       </View>
     )
