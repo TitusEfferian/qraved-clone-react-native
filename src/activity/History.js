@@ -4,9 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 class History extends React.Component {
     static navigationOptions ={
-        tabBarIcon:({tintColor})=>(
-            <Icon name="history" size={24} color={tintColor}></Icon>
-        ),
+        
     }
   render() {
     return (
