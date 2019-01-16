@@ -84,9 +84,9 @@ const BottomNavigation = createBottomTabNavigator(
       activeTintColor: RED_COLOR,
     },
     lazy: true,
+    
   }
 )
-
 
 const StacksOverTabs = createStackNavigator({
   Root: {
@@ -98,8 +98,8 @@ const StacksOverTabs = createStackNavigator({
             <HeaderHome {...props} />
           )
         }
-      }
-    }
+      },
+    },
   },
   SearchActivity: {
     screen: SearchActivity,
