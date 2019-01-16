@@ -11,18 +11,22 @@ import TabNavigator from '../activity/Home/TabNavigation';
 import Header from '../components/Header';
 import ForkIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Button from '../components/Button';
-import { Text, View } from 'react-native'
+import { Text, View,TouchableOpacity } from 'react-native'
+import SearchActivity from '../activity/Home/Search';
 
-const HeaderHome = () => {
+const HeaderHome = (props) => {
+
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1,backgroundColor:'white' }}>
             <Header>
                 <ForkIcon name="silverware-fork-knife" size={24} color={RED_COLOR}></ForkIcon>
                 <Button style={{ backgroundColor: GRAY_COLOR, justifyContent: 'space-between' }}>
                     <Text style={FONT_BOLD}>Jakarta</Text>
                     <Icon name="keyboard-arrow-down" style={{ marginLeft: 16 }} size={24}></Icon>
                 </Button>
+                <TouchableOpacity onPress={()=>{props.navigation.navigate('Search')}}>
                 <Icon name="search" size={24}></Icon>
+                </TouchableOpacity>
             </Header>
         </View>
     )
@@ -36,9 +40,10 @@ const BottomNavigation = createBottomTabNavigator(
                 Home: {
                     screen: TabNavigator,
                     navigationOptions: {
-                        headerTitle: () => <HeaderHome/>
+                        header: (props) => <HeaderHome {...props}/>
                     }
-                }
+                },
+                Search:SearchActivity
             }),
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
