@@ -31,7 +31,6 @@ class SearchActivity extends React.PureComponent {
   }
 
   render() {
-    console.log(this.props.restorant)
     return (
       <View style={{ flex: 1, backgroundColor: GRAY_COLOR }}>
         <Sections style={{ flexDirection: 'row', alignItems: 'center', padding: 8 }}>
