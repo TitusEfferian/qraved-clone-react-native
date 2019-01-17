@@ -5,6 +5,7 @@ import Sections from '../../components/Sections';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { connect } from 'react-redux'
 import { requestSearchRestorant, resetReduxState } from '../../redux/actions/searchRestorant';
+import RestorantResult from '../../components/RestorantResult';
 
 class SearchActivity extends React.PureComponent {
   static navigationOptions = {
@@ -67,13 +68,18 @@ class SearchActivity extends React.PureComponent {
                 :
                 null
             :
+            <View>
             <Text style={{
               ...FONT_BOLD,
               ...FONT_SIZE_LARGE
             }}>
               Restaurant
             </Text>
+
+            </View>
           }
+            <RestorantResult/>
+
         </Sections>
       </View>
     )
