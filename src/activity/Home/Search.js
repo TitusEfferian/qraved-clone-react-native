@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TextInput,ActivityIndicator } from 'react-native'
+import { View, Text, TextInput,ActivityIndicator,FlatList } from 'react-native'
 import { GRAY_COLOR, FONT_BOLD, FONT_SIZE_LARGE, RED_COLOR } from '../../styles';
 import Sections from '../../components/Sections';
 import Icon from 'react-native-vector-icons/MaterialIcons'
