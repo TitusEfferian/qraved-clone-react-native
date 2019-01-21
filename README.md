@@ -1,1 +1,2 @@
 ![](Home.gif)
+![](search.gif)
