@@ -79,7 +79,6 @@ class SearchActivity extends React.PureComponent {
             data={this.props.restorant.data.restaurantList}
             renderItem={({item})=><RestorantResult {...item}/>}
             />
-
             </View>
           }
         </Sections>
