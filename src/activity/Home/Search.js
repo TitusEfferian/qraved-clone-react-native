@@ -68,18 +68,20 @@ class SearchActivity extends React.PureComponent {
                 :
                 null
             :
-            <View>
+            <View style={{flex:1}}>
             <Text style={{
               ...FONT_BOLD,
               ...FONT_SIZE_LARGE
             }}>
               Restaurant
             </Text>
+            <FlatList
+            data={this.props.restorant.data.restaurantList}
+            renderItem={({item})=><RestorantResult {...item}/>}
+            />
 
             </View>
           }
-            <RestorantResult/>
-
         </Sections>
       </View>
     )

@@ -1,41 +1,45 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text,ImageBackground } from 'react-native'
 import { GRAY_COLOR, FONT_GRAY, FONT_SIZE_NORMAL } from '../styles';
 
 const RestorantResult = (props) => {
+    console.log(props)
     return (
         <View
             style={{
                 flexDirection: 'row',
-                marginTop:16
+                marginTop: 16
             }}
         >
-            <View style={{
-                width: 60,
-                height: 60,
-                borderRadius: 4,
-                backgroundColor: 'red',
-            }}>
+            <ImageBackground
+            style={{
+                width:60,
+                height:60,
+                borderRadius:8,
+                overflow:'hidden'
+            }}
+            imageStyle={{
+                backgroundColor:GRAY_COLOR
+            }}
+            source={{uri:'https://www.qraved.com/'+props.imageUrl}}
+            />
 
-            </View>
             <View style={{
-                alignItems: 'center',
                 justifyContent: 'center',
                 marginLeft: 16
             }}>
                 <Text>
-                    Sushi go
+                    {props.title}
                 </Text>
                 <Text
                     style={{
-                        marginTop:4,
+                        marginTop: 4,
                         ...FONT_GRAY,
                     }}
                 >
-                    Thamrin
+                    {props.location.district.name}
                 </Text>
             </View>
-
         </View>
     )
 }

@@ -17,6 +17,7 @@ class Widget extends React.PureComponent {
             imageStyle={{
                 backgroundColor: GRAY_COLOR
             }}
+            
             onLoad={() => { this.setState({ onLoad: false }) }}
         >
             <View style={{ flex: 1, backgroundColor: 'black', opacity: 0.2 }}>
