@@ -3,7 +3,6 @@ import { View, Text,ImageBackground } from 'react-native'
 import { GRAY_COLOR, FONT_GRAY, FONT_SIZE_NORMAL } from '../styles';
 
 const RestorantResult = (props) => {
-    console.log(props)
     return (
         <View
             style={{
