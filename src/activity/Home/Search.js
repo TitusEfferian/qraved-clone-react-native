@@ -78,6 +78,7 @@ class SearchActivity extends React.PureComponent {
             <FlatList
             data={this.props.restorant.data.restaurantList}
             renderItem={({item})=><RestorantResult {...item}/>}
+            keyExtractor={(x,y)=>y.toString()}
             />
             </View>
           }
