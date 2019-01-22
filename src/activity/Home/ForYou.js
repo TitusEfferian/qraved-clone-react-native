@@ -16,6 +16,7 @@ class ForYou extends React.Component {
         this.props.fetchHome(2)
     }
     render() {
+        console.log(this.props.home)
         return (
             <ScrollView style={{ flex: 1, backgroundColor: GRAY_COLOR }}>
                 <Modal
@@ -32,11 +33,11 @@ class ForYou extends React.Component {
                         <View style={{ alignItems: 'center' }}>
                             <Text style={{...FONT_BOLD,...FONT_SIZE_LARGE,marginBottom:8}}>Discover Other Cities</Text>
                             <Text style={{...FONT_GRAY,marginBottom:16}}>explore the best food and places...</Text>
-                            {
+                            {   
                                 this.props.cities.data != undefined
                                     ?
                                     this.props.cities.data.map(x => (
-                                        <TouchableOpacity key={x.id}>
+                                        <TouchableOpacity key={x.id} onPress={()=>{this.props.fetchHome(x.id),this.props.requestModal()}}>
                                             <Text style={{ ...FONT_SIZE_LARGE, ...FONT_BOLD, marginBottom: 24 }}>{x.name}</Text>
                                         </TouchableOpacity>
                                     ))
