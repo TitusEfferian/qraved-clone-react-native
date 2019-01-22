@@ -1,12 +1,30 @@
 import React from 'react'
-import { View } from 'react-native'
+import { TouchableOpacity } from 'react-native'
+import {connect} from 'react-redux'
+import { requestModal } from '../redux/actions/modalActived';
 
-const Button = (props) => {
-    return (
-        <View style={[{ ...props.style }, { paddingHorizontal:16,paddingVertical:4,borderRadius:30,flexDirection:'row',alignItems:'center' }]}>
-            {props.children}
-        </View>
-    )
+class Button extends React.PureComponent {
+    constructor(props) {
+        super(props)
+    }
+    render() {
+        return (
+            <TouchableOpacity onPress={()=>{this.props.modalRequest()}} style={[{ ...this.props.style }, { paddingHorizontal: 16, paddingVertical: 4, borderRadius: 30, flexDirection: 'row', alignItems: 'center' }]}>
+                {this.props.children}
+            </TouchableOpacity>
+        )
+    }
 }
 
-export default Button
+function mapStateToProps(state){
+    return{
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return{
+        modalRequest:()=>dispatch(requestModal())
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Button)

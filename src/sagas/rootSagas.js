@@ -7,7 +7,9 @@ import { REQUEST_SEARCH_RESTORANT } from '../redux/actions/searchRestorant';
 import { searchRestorant } from './searchRestorant';
 
 export default function* rootSaga() {
-    yield takeEvery(REQUEST_DATA_HOME, fetchHomePage)
-    yield takeEvery(REQUEST_CITIES, cities),
-    yield takeEvery(REQUEST_SEARCH_RESTORANT,searchRestorant)
+    yield all([
+        yield takeEvery(REQUEST_DATA_HOME, fetchHomePage),
+        yield takeEvery(REQUEST_CITIES, cities),
+        yield takeEvery(REQUEST_SEARCH_RESTORANT, searchRestorant)
+    ])
 }
