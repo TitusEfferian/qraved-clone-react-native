@@ -13,7 +13,7 @@ class ForYou extends React.Component {
     }
     componentDidMount() {
         this.props.fetchCities()
-        this.props.fetchHome()
+        this.props.fetchHome(2)
     }
     render() {
         return (
@@ -98,7 +98,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         fetchCities: () => dispatch(requsetCities()),
-        fetchHome: () => dispatch(requestDataHome()),
+        fetchHome: (id) => dispatch(requestDataHome(id)),
         requestModal: () => dispatch(requestModal())
     }
 }
